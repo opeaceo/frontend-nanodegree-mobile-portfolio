@@ -32,7 +32,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 #### Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
@@ -53,3 +53,12 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+########Part 1: Optimize PageSpeed Insights score ########
+1. Use `https://cssminifier.com/` to minify the style.css. 
+
+########Part 2: Optimize Frames per second in pizza.html ########
+The following optimizations were made to 'views/js/main.js':
+
+1. Changed function `changePizzaSizes` to prevent forced synchronous layouts.
+2. Moved `  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;` outside of for loop.
