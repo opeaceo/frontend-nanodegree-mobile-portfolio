@@ -26,7 +26,8 @@ Some useful tips to help you get started:
   $> ./ngrok http 8080
   ```
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! (https://developers.google.com/speed/pagespeed/insights/)
+Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
 
 Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
@@ -54,11 +55,24 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
 
+### Detailed Changes:
 ########Part 1: Optimize PageSpeed Insights score ########
-1. Use `https://cssminifier.com/` to minify the style.css. 
+1. Used `https://cssminifier.com/` to minify the style.css.
+2. Downscaled and compressed pizzera.jpg file and save the original file to pizzeria_original.jpg.
+3. On line 15 of src/index.html, add a media query on the print.css.
+4. Inlined style.css to prevent render blocking(line 28 - 30 on index.html).
+5. Moved render blocking javascripts to the bottom of page.
+6. Inlined Google Web Fonts using JavaScript.
 
 ########Part 2: Optimize Frames per second in pizza.html ########
 The following optimizations were made to 'views/js/main.js':
-
 1. Changed function `changePizzaSizes` to prevent forced synchronous layouts.
 2. Moved `  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;` outside of for loop.
+3. Dynamically calculate the number of pizzas needed to fit the screen instead of using 200.
+4. Calculate phase values inside a separate loop instead of the main loop to save some resources.  
+5. On line 468, replaced querySelectorAll() with getElementsByClassName(), since getElementsByClassName() is faster than querySelectorAll().
+
+###Steps to measure the performance:
+1. open pizza.html with Chrome.(https://opeaceo.github.io/frontend-nanodegree-mobile-portfolio/views/pizza.html)
+2. Open Chrome Developer tools.
+3. Use the features on the Performance tab to record some actions and analyze the frame per second.
