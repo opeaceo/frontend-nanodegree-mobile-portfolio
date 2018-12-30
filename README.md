@@ -56,7 +56,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
 
 ### Detailed Changes:
-####Part 1: Optimize PageSpeed Insights score
+#### Part 1: Optimize PageSpeed Insights score
 1. Used `https://cssminifier.com/` to minify the style.css.
 2. Downscaled and compressed pizzera.jpg file and save the original file to pizzeria_original.jpg.
 3. On line 15 of src/index.html, add a media query on the print.css.
@@ -64,7 +64,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 5. Moved render blocking javascripts to the bottom of page.
 6. Inlined Google Web Fonts using JavaScript.
 
-####Part 2: Optimize Frames per second in pizza.html
+#### Part 2: Optimize Frames per second in pizza.html
 The following optimizations were made to 'views/js/main.js':
 1. Changed function `changePizzaSizes` to prevent forced synchronous layouts.
 2. Moved `  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;` outside of for loop.
@@ -72,7 +72,7 @@ The following optimizations were made to 'views/js/main.js':
 4. Calculate phase values inside a separate loop instead of the main loop to save some resources.  
 5. On line 468, replaced querySelectorAll() with getElementsByClassName(), since getElementsByClassName() is faster than querySelectorAll().
 
-###Steps to measure the performance:
+### Steps to measure the performance:
 1. open pizza.html with Chrome.(https://opeaceo.github.io/frontend-nanodegree-mobile-portfolio/views/pizza.html)
 2. Open Chrome Developer tools.
 3. Use the features on the Performance tab to record some actions and analyze the frame per second.
