@@ -56,7 +56,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
 
 ### Detailed Changes:
-########Part 1: Optimize PageSpeed Insights score ########
+####Part 1: Optimize PageSpeed Insights score
 1. Used `https://cssminifier.com/` to minify the style.css.
 2. Downscaled and compressed pizzera.jpg file and save the original file to pizzeria_original.jpg.
 3. On line 15 of src/index.html, add a media query on the print.css.
@@ -64,7 +64,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 5. Moved render blocking javascripts to the bottom of page.
 6. Inlined Google Web Fonts using JavaScript.
 
-########Part 2: Optimize Frames per second in pizza.html ########
+####Part 2: Optimize Frames per second in pizza.html
 The following optimizations were made to 'views/js/main.js':
 1. Changed function `changePizzaSizes` to prevent forced synchronous layouts.
 2. Moved `  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;` outside of for loop.
